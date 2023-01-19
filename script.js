@@ -22,3 +22,7 @@ inputSearchForm.addEventListener("submit", (event)=> {
     console.log(searchInnerData);
     document.querySelector(".listOfRecent").innerHTML = searchInnerData;
 })
+
+document.querySelector("#loginLogoutBtn").addEventListener("click", ()=> {
+    location.href="./login.html";
+})
