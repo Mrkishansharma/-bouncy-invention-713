@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="login.css">
+  <script defer src="login.js"></script>
+</head>
+
+<body>
+
+    <nav class="Top-Nav-Bar">
+        <header class="header">
+            <div class="leftHeader">
+                <div class="logoContainer">
+                    <a href="./index.html">
+                        <img src="./img/logo-icon.png" alt="BazzarBuddy">
+                    </a>
+                </div>
+                <div class="searchInputContainer">
+                    <div class="searchIcon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <form action="" id="inputSearchForm">
+                        <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" class="searchInput"/>
+                    </form>
+                    <div class="closeIcon">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="recentSearchBox">
+                        <h2>Reacent Searches</h2>
+                        <div class="listOfRecent">
+                            <!-- Reacent Search Data append -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="rightHeader">
+                <div class="downloadApp">
+                    <!-- <i class="fa-solid fa-mobile-screen"></i> -->
+                    <p>Download App</p>
+                </div>
+                <div class="becomeSupplier">
+                    <p>Become a Supplier</p>
+                </div>
+                <div class="profileAndCart">
+                    <div class="profileContainer">
+                        <i class="fa-regular fa-user  profileICON"></i>
+                        <p>Profile</p>
+                    </div>
+                    <div class="cartContainer">
+                        <i class="fa-solid fa-cart-shopping cartICON"></i>
+                        <p>Cart</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </nav>
+
+    <main class="container">
+        <div class="LoginFormContainer">
+            <div class="loginImage">
+                <img src="https://images.meesho.com/images/marketing/1661417516766.webp" alt="LoginPoster" >
+            </div>
+            <div class="loginForm">
+                <h2 id="signUp-heading">Sign Up to view your profile</h2>
+                <form action="" id="login-form">
+                    <input type="text" name="crCode" id="countryCode" value="+91" required>
+                    <input type="text" name="number" id="mobileNumber" placeholder="Phone Number" required>
+                    <input type="submit" value="Send OTP" class="formSubmitButton">
+                </form>
+            </div>
+            <div class="loginBottomText">
+                <p>By continuing, you agree to Meesho’s </p>
+                 <p>   Terms & Conditions  
+                    and  
+                    Privacy Policy</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

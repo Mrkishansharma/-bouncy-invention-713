@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="./product.css">
+    <link rel="stylesheet" href="./productDetal.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,7 +27,7 @@
                     <a href="./index.html">
                         <img src="./img/logo-icon.png" alt="BazzarBuddy">
                     </a>
-                </div> 
+                </div>
                 <div class="searchInputContainer">
                     <div class="searchIcon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -89,45 +90,51 @@
         </div>
     </nav>
 
-    <div class="posterBanners">
-        <div class="LowestPriceBanner">
-            <img src="./img/banner1.png" alt="Lowest Price Banner">
-        </div>
+    <div class="posterBanners"></div>
 
-        <div class="topCategoryBanner">
-            <div class="topCategoryHeading">
-                <span class="hrLine"></span>
-                <h1>Top Categories to choose from</h1>
-                <span class="hrLine"></span>
+
+    <div class="productDetailSection">
+        <div class="productData">
+            <div class="productImageSection">
+                <img id="prdImage" src="https://images.meesho.com/images/products/167547264/mpxkv_512.webp" alt="cartImage">
+                <div class="addAndCartBtn">
+                    <button id="addToCartBtn">
+                        <i class="fa-solid fa-cart-shopping cartICON"></i>
+                        <span>Add to Cart</span>
+                    </button>
+                    <button id="buyNowBtn">
+                        <i class="fa-solid fa-angles-right"></i>
+                        <span>Buy Now</span>
+                    </button>
+                </div>
+            </div>
+            <div class="productDetailSection">
+                <div>
+                    <h2 id="prdTitle"> </h2>
+                    <h1 id="prdPrice"> </h1>
+                    <div class="rating-block--d">
+                        <span id="prdRating"> </span>
+                        <span id="prdReview"> </span>
+                    </div>
+                    <div class="delivery--d">
+                        <span>Free Delivery</span>
+                    </div>
+                </div>
+                <div class="size--d">
+                    <h6>Select Size</h6>
+                    <span>Free Size</span>
+                </div>
+                <div>
+                    <h6>Product Details</h6>
+                    <p id="prdName">Name: </p>
+                    <p id="prdCategory">Category: </p>
+                    <p id="prdDesc">Description: </p>
+                </div>
             </div>
         </div>
-
-        <div class="FashionStoreBanner">
-            <img src="./img/FashionStore.png" alt="Fashtion Store">
-        </div>
-
-        <div class="EssentiolsBanner">
-            <img src="./img/Essential.png" alt="Essentials">
-        </div>
-
-        <div class="ResselerBanner">
-            <img src="./img/resseler.png" alt="Became Ressler">
-        </div>
-
-        <div class="SupplierBanner">
-            <img src="./img/supplier.png" alt="Supplier">
-        </div>
-
     </div>
 
-    <div class="productAndFilter">
-        <div class="filterSection">
-
-        </div>
-        <div class="productsSection">
-            
-        </div>
-    </div>
+    
 
     <footer class="Bottom-Footer">
         <div>
@@ -191,11 +198,10 @@
 
 
 
-    
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="./product.js"></script>
+    <script src="./productDetail.js"></script>
 </body>
 </html>

@@ -12,162 +12,9 @@ body{
     font-family: 'Roboto', sans-serif;
     color:rgb(51, 51, 51);
 }
+
 img{
     width: 100%;
-}
-
-
-.Top-Nav-Bar{
-    width: 100%;
-    position: fixed;
-    overflow: hidden;
-    background-color: white;
-    top: 0;
-}
-.header{
-    height: 72px;
-    /* border: 1px solid #ccc; */
-    padding: 0px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 400;
-}
-.leftHeader, .rightHeader{
-    display: flex;
-    align-items: center;
-}
-.logoContainer{
-    width: 155px;
-}
-.searchInputContainer{
-    border: 1px solid rgb(146, 143, 143);
-    border-radius: 3px;
-    width: 400px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 10px;
-    position: relative;
-}
-.searchIcon{
-    margin: 7px;
-}
-#inputSearchForm{
-    width: 100%;
-}
-.searchInput{
-    width: 100%;;
-    border: none;
-    outline: 0;
-    font-size: 16px;
-}
-.closeIcon{
-    display: none;
-}
-.recentSearchBox{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    top: 50px;
-    background-color: white;
-    width: 100%;
-    height: 400px;
-    display: none;
-    padding: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-.searchInputContainer:focus-within .recentSearchBox{
-    display: block;
-}
-
-.recentItem{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Right Navbar Section */
-
-.downloadApp{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    gap: 10px;
-    font-size: 18px;
-    padding: 0px 20px;
-}
-.downloadApp:hover{
-    color: var(--textColorForHover);
-    cursor: pointer;
-}
-.downloadApp p{
-    height: 100%;
-    padding-top: 15px;
-}
-.becomeSupplier{
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    padding: 0px 20px;
-    border-left: 2px solid #ccc;
-    border-right: 2px solid #ccc;
-    height: 8vh;
-}
-.becomeSupplier p {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    display: flex;
-    align-items: center;
-}
-.profileAndCart{
-    display: flex;
-    align-items: center;
-}
-.profileICON, .cartICON{
-    width: 30px;
-    text-align: center;
-}
-.profileAndCart  p{
-    margin: 0;
-    padding: 0;
-}
-.profileContainer, .cartContainer{
-    padding: 0px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-/* Navigation Menu */
-
-.Navigation--menu {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #ccc;
-}
-.Navigation--menu ul{
-    padding: 0px 35px;
-    margin: 0px;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-.Navigation--menu ul li{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    /* border-bottom: 2px solid transparent; */
-}
-.Navigation--menu ul li:hover{
-    color: var(--regularTexColor);
-    border-bottom: 3px solid var(--textColorForHover);
-    cursor: pointer;
 }
 
 
@@ -179,7 +26,7 @@ img{
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     margin-bottom: 50px;
     padding:0px 60px;
-    margin-top: 0;
+    margin-top: 50px;
     /* background-color: rgb(245, 254, 253); */
 }
 .Bottom-Footer > div{
