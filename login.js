@@ -18,6 +18,7 @@ fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users`)
 
 loginFormEl.addEventListener("submit", (event) => {
     event.preventDefault();
+    
     let phoneNumber = loginFormEl.mobileNumber.value;
     signUpHeadingEl.innerText = `Enter OTP sent to ${phoneNumber}`;
     
@@ -71,9 +72,10 @@ loginFormEl.addEventListener("submit", (event) => {
         if(phoneNumber=="1234567890" && enteredOTP=="0000"){
             alert("admin login")
         }else if(enteredOTP=="1234"){
-            alert("user login")
+            alert("Login Succesfully")
             checkLoginUser(phoneNumber)
-            location.href='./index.html'
+            history. back()
+            // location.href='./index.html'
         }else{
             alert("Wroung OTP")
         }
@@ -91,7 +93,6 @@ function checkLoginUser(phoneNumber){
     userData.forEach((element) => {
         if(element.mobileNumber==phoneNumber){
             userId = element.id;
-            console.log("userId", userId);
             return
         }
     })

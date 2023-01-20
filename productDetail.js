@@ -61,6 +61,7 @@ function addCartIntoUserAPI(data){
     if(flag){
         alert("Already added into Cart");
     }else{
+        alert("Successfully added into cart");
         data.cart.push(currProduct);
         fetchedUserData = data;
 
