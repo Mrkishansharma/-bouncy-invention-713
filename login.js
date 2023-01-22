@@ -86,10 +86,10 @@ loginFormEl.addEventListener("submit", (event) => {
         }else if(enteredOTP=="1234" && phoneNumber!=="9783736430"){
             checkLoginUser(phoneNumber)
             alert("Login Successfully")
-            history. back()
+            history.back()
             // location.href='./index.html'
         }else{
-            alert("Wroung OTP")
+            alert("Wrong OTP")
         }
     })
     

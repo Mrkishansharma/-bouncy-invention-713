@@ -84,7 +84,6 @@ function findLoginUserName(){
         fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`)
         .then(res => res.json())
         .then(data => {
-            console.log("user ****",data);
             currLoginUser = data
             displayLoginUserName(currLoginUser);
         }).catch(er => {
