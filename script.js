@@ -1,3 +1,4 @@
+// import {kkk} from "./product.js"
 let inputSearchEl = document.querySelector(".searchInput");
 let recentSearch = []
 let inputSearchForm = document.getElementById("inputSearchForm");
@@ -5,6 +6,7 @@ let inputSearchForm = document.getElementById("inputSearchForm");
 let userNameDisplay = document.getElementById("userNameDisplay");
 let loginLogoutBtn = document.getElementById("loginLogoutBtn");
 
+// kkk()
 //  show & hide close-search-icon
 inputSearchEl.addEventListener("keydown", ()=>{
     document.querySelector(".closeIcon").style.display=inputSearchEl.value ? "block" : "none";
@@ -12,6 +14,8 @@ inputSearchEl.addEventListener("keydown", ()=>{
 
 inputSearchForm.addEventListener("submit", (event)=> {
     event.preventDefault();
+    
+
     recentSearch.push(inputSearchEl.value);
     let searchInnerData = ""
     if(recentSearch.length){
@@ -22,9 +26,41 @@ inputSearchForm.addEventListener("submit", (event)=> {
                         </div>`
         })
     }
-    console.log(searchInnerData);
+
     document.querySelector(".listOfRecent").innerHTML = searchInnerData;
+    searchProductFunc(inputSearchEl.value)
+    document.getElementById("posterHataneKeLiyeId").style.display="none"
 })
+
+async function searchProductFunc(s){
+    var res = await fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/products?title=${s}`)
+    var d = await res.json()
+    displayProducts(d)
+
+}
+productsSection = document.querySelector(".productsSection");
+function displayProducts(data){
+    productsSection.innerHTML = ""
+    let cartDataInnerHTML = ""
+    data.forEach((element) => {
+        cartDataInnerHTML += `<div onclick="addToLS(${element.id})">
+                                    <div class="cartImg">
+                                        <img src="${element.avatar}" alt="">
+                                    </div>
+                                    <div class="cartDetail">
+                                        <h6>${element.title}</h6>
+                                        <h5><i class="fa-solid fa-indian-rupee-sign"></i> ${element.price}</h5>
+                                        <p class="freeDeleveryTag">Free Deleviry</p>
+                                        <div class="cartRating">
+                                            <p>${element.rating%5} ⭐</p>
+                                            <p>${element.reviews*153} Reviews</p>
+                                        </div>
+                                    </div>
+                                </div>`;
+         
+    })
+    productsSection.innerHTML = cartDataInnerHTML;
+}
 
 document.querySelector("#loginLogoutBtn").addEventListener("click", ()=> {
     localStorage.removeItem("currLoginUserId")
@@ -43,12 +79,12 @@ findLoginUserName()
 function findLoginUserName(){
     let currLoginUserId = JSON.parse(localStorage.getItem("currLoginUserId"))
     console.log("currLoginUserId", currLoginUserId);
-
     if(currLoginUserId){
+        currLoginUserId=+currLoginUserId
         fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            console.log("user ****",data);
             currLoginUser = data
             displayLoginUserName(currLoginUser);
         }).catch(er => {
@@ -59,10 +95,15 @@ function findLoginUserName(){
 }
 
 function displayLoginUserName(currLogedInUser){
-    userNameDisplay.innerText = currLogedInUser.mobileNumber;
-    userNameDisplay.style.color = "green";
+    if(currLogedInUser.address.name){
+        userNameDisplay.innerText = currLogedInUser.address.name;
+    }else{
+        userNameDisplay.innerText = currLogedInUser.mobileNumber;
+    }
+
+    userNameDisplay.style.color = "#666666";
     loginLogoutBtn.innerText = "Logout"
-    loginLogoutBtn.style.backgroundColor = "red"
+    loginLogoutBtn.style.backgroundColor = "#fb3a3a"
     loginLogoutBtn.style.color = "white"
 }
 

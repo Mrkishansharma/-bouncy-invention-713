@@ -8,11 +8,21 @@ let signUpHeadingEl = document.getElementById("signUp-heading");
 
 
 let userData = []
-fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users`)
-.then(res => res.json())
-.then(data => {
-    userData = data
-})
+getAllUsersFromAPI();
+async function getAllUsersFromAPI(){
+    try {
+        let res = await fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users`)
+        let data = await res.json();
+        userData=data
+    } catch (error) {
+        console.log(error);
+    }
+}
+// fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users`)
+// .then(res => res.json())
+// .then(data => {
+//     userData = data
+// })
 
 
 
@@ -69,11 +79,13 @@ loginFormEl.addEventListener("submit", (event) => {
 
     verifyBtn.addEventListener("click", ()=> {
         let enteredOTP = document.getElementById("otpInput").value;
-        if(phoneNumber=="1234567890" && enteredOTP=="0000"){
-            alert("admin login")
-        }else if(enteredOTP=="1234"){
-            alert("Login Succesfully")
+        if(phoneNumber=="9783736430" && enteredOTP=="2301"){
+            alert("admin login Successfully!!")
+            localStorage.setItem("isLogedInAdmin", 1)
+            location.href = "./admin/index.html"
+        }else if(enteredOTP=="1234" && phoneNumber!=="9783736430"){
             checkLoginUser(phoneNumber)
+            alert("Login Successfully")
             history. back()
             // location.href='./index.html'
         }else{

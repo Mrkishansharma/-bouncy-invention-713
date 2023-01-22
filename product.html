@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +26,7 @@
                     <a href="./index.html">
                         <img src="./img/logo-icon.png" alt="BazzarBuddy">
                     </a>
-                </div>
+                </div> 
                 <div class="searchInputContainer">
                     <div class="searchIcon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -59,7 +59,8 @@
                         <i class="fa-regular fa-user  profileICON"></i>
                         <p>Profile</p>
                         <div class="profileDetailBox">
-                            <div>
+                            <div id="profileHoverUser--k">
+                                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" alt="" id="imageProfile-icon" style="border-radius: 50%;">
                                 <h2 id="userNameDisplay">Hello User</h2>
                             </div>
                             <div>
@@ -94,10 +95,126 @@
 
     <div class="productAndFilter">
         <div class="filterSection">
+            <!-- filter functionality -->
+            <div id="sortPrice">
+                <select name="price" id="priceSort">
+                    <option value=""> select option for sort price:</option>
+                    <option value="HTL">High to Low</option>
+                    <option value="LTH">Low to High</option>
+                </select>
+            </div><br>
+
+            <div id="filterCategory">
+                <!-- all category here apppend -->
+            </div><br>
+            
+            <div id="filterPrice">
+                <h5>Price Filter</h5>
+                <div>
+                    <input type="radio" name="PriceValue" value="ZeroToNinetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                             0 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            99
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="oneHunderedToOneNininetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            100 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            199
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="twoHunderedToTowNininetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            200 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            299
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="threeHunderedToThreeNininetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            300 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            399
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="fourHunderedToFourNininetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            400 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            499
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="fiveHunderedToFiveNininetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            500 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            599
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="sixHunderedToSixNininetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            600 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            699
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="sevenHunderedToNineNininetynine">
+                        <span>
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            700 - 
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            999
+                        </span>
+                </div>
+                <div>
+                    <input type="radio" name="PriceValue" value="oneThousandAbove">
+                        <span>
+                            Above &nbsp;
+                            <i class="fa-solid fa-indian-rupee-sign"></i> 
+                            1000
+                        </span>
+                </div>
+            </div><br>
+
+            <div id="sortRating">
+                <h5>Ratings</h5>
+
+                <div>
+                    <input type="radio" name="rating" value="Five"><span> Only 5 ⭐</span>
+                </div>
+                <div>
+                    <input type="radio" name="rating" value="Four"><span> Only 4 ⭐</span>
+                </div>
+                <div>
+                    <input type="radio" name="rating" value="Three"><span> Only 3 ⭐</span>
+                </div>
+                <div>
+                    <input type="radio" name="rating" value="Two"><span> Only 2 ⭐</span>
+                </div>
+                <div>
+                    <input type="radio" name="rating" value="One"><span> Only 1 ⭐</span>
+                </div>
+            </div><br>
 
         </div>
         <div class="productsSection">
-            
+            <!-- product cart here append -->
         </div>
     </div>
 

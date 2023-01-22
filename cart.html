@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,14 +12,18 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="./product.css">
     <link rel="stylesheet" href="./cart.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- font awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+ 
 <body>
     <nav class="Top-Nav-Bar">
         <header class="header">
@@ -60,7 +65,8 @@
                         <i class="fa-regular fa-user  profileICON"></i>
                         <p>Profile</p>
                         <div class="profileDetailBox">
-                            <div>
+                            <div id="profileHoverUser--k">
+                                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" alt="" id="imageProfile-icon" style="border-radius: 50%;">
                                 <h2 id="userNameDisplay">Hello User</h2>
                             </div>
                             <div>
@@ -94,10 +100,10 @@
     </div>
 
     <div class="p--emptyCartPage">
-        <img src="https://cdn.dribbble.com/users/5107895/screenshots/14532312/media/a7e6c2e9333d0989e3a54c95dd8321d7.gif" alt="">
-        <img src="https://cdn.dribbble.com/users/1260892/screenshots/7151607/media/996de2cf8e7206459c808052ffa07152.gif" alt="" onclick="goTOProductPage()">
+        <!-- empty cart page -->
         <img src="https://cdn.dribbble.com/users/2046015/screenshots/4591856/first_white_girl_drbl.gif" alt="">
-        <!-- <button>ADD PRODUCT</button> -->
+        <h6>Your cart is empty</h6>
+        <button onclick="goTOProductPage()">VIEW PRODUCT</button>
     </div>
 
     <div class="cartPage">
@@ -106,10 +112,10 @@
                 <p>Cart</p>
                 <p><span id="totalQty">5</span> Item</p>
             </div>
-            
+
             <div class="cartShow">
 
-              <!-- here append all products -->
+                <!-- here append all products -->
 
             </div>
         </div>
@@ -120,7 +126,7 @@
                     <span>Total Product Price</span>
                     <span>
                         <i class="fa-solid fa-indian-rupee-sign"></i>
-                        <span id="totalProductPrice">1460</span>
+                        <span id="totalProductPrice">0</span>
                     </span>
                 </div>
             </div>
@@ -129,17 +135,18 @@
                     <h5>Order Total</h5>
                     <span>
                         <i class="fa-solid fa-indian-rupee-sign"></i>
-                        <span id="totalOrderPrice">1460</span>
+                        <span id="totalOrderPrice">0</span>
                     </span>
                 </div>
                 <p>Clicking on ‘Continue’ will not deduct any money</p>
-                <button id="continueBtn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Continue</button>
+                <button id="continueBtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" data-bs-whatever="@mdo">Continue</button>
             </div>
             <div>
                 <img src="https://images.meesho.com/images/marketing/1588578650850.webp" alt="">
             </div>
         </div>
-        
+
     </div>
 
 
@@ -147,44 +154,45 @@
 
 
 
-<!-- order successfully & adress page & while click on continue -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <img src="./img/logo-icon.png" alt="BazzarBuddy" class="modal-title" style="width: 100px;">
-          <h5 class="modal-title"  style="margin-left: 35px;">Enter Delivery Address</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="address-form">
-          <div class="mb-2">
-            <label for="recipient-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="addressName" required>
-          </div>
-          <div class="mb-2">
-            <label for="recipient-name" class="col-form-label">Phone Number:</label>
-            <input type="number" class="form-control" id="addressPhone" required>
-          </div>
-          <div class="mb-2">
-            <label for="message-text" class="col-form-label">Full Address:</label>
-            <textarea class="form-control" id="addressDetail" required></textarea>
-          </div>
-          <div class="mb-2">
-            <label for="recipient-name" class="col-form-label">Pin Code:</label>
-            <input type="number" class="form-control" id="addressPinCode" required>
-          </div>
-          <!-- <div class="mb-3"> -->
-            <input type="submit" class="form-control btn btn-secondary mb-3" id="recipient-name" value="Confirm Order" style="margin-top: 10px; padding: 10px; font-size: 1.2rem;">
-          <!-- </div> -->
+    <!-- order successfully & adress page & while click on continue -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="./img/logo-icon.png" alt="BazzarBuddy" class="modal-title" style="width: 100px;">
+                    <h5 class="modal-title" style="margin-left: 35px;">Enter Delivery Address</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="address-form">
+                        <div class="mb-2">
+                            <label for="recipient-name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="addressName" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="recipient-name" class="col-form-label">Phone Number:</label>
+                            <input type="number" class="form-control" id="addressPhone" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="message-text" class="col-form-label">Full Address:</label>
+                            <textarea class="form-control" id="addressDetail" required></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label for="recipient-name" class="col-form-label">Pin Code:</label>
+                            <input type="number" class="form-control" id="addressPinCode" required>
+                        </div>
+                        <!-- <div class="mb-3"> -->
+                        <input type="submit" class="form-control btn btn-secondary mb-3" id="recipient-name"
+                            value="Confirm Order" style="margin-top: 10px; padding: 10px; font-size: 1.2rem;">
+                        <!-- </div> -->
 
-        </form>
-      </div>
-      <div class="modal-footer">
-      </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
 
@@ -197,12 +205,15 @@
 
 
 
-    
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <!-- <script src="./product.js"></script> -->
+    <script src="./product.js"></script>
     <script src="./cart.js"></script>
 </body>
+
 </html>

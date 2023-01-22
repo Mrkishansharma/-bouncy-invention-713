@@ -1,0 +1,310 @@
+<!Doctype HTML>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADMIN</title>
+    <link rel="icon" href="../img/icon.png" />
+    <link rel="stylesheet" href="admin.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <p class="logo" onclick="goToDashboardPage()"><img src="../img/logo-icon.png" alt="" id="logoImage--icon"></p>
+        <a href="#" class="icon-a" onclick="goToDashboardPage()"><i class="fa fa-dashboard icons"></i> Dashboard</a>
+        <a href="#" class="icon-a" onclick="goToCustomerPage()"><i class="fa fa-users icons"></i> Customers</a>
+        <a href="#" class="icon-a" onclick="goToProductPage()"><i class="fa fa-list icons"></i> Products</a>
+        <a href="#" class="icon-a" onclick="goToOrderPage()"><i class="fa fa-shopping-bag icons"></i> Orders</a>
+        <a href="#" class="icon-a" onclick="logoutAdminFunc()"><i class="fa-solid fa-right-to-bracket"></i> Logout</a>
+
+    </div>
+    <div id="main">
+        <div class="head" id="navabr--fixed">
+            <div class="col-div-6">
+                <span style="font-size:30px;cursor:pointer; color: rgb(44, 42, 42);" class="nav" id="headingOfPage">☰
+                    Dashboard</span>
+                <span style="font-size:30px;cursor:pointer; color: rgb(20, 16, 16);" class="nav2" id="headingOfPage2">☰ Dashboard</span>
+            </div>
+            <div class="col-div-6">
+                <div class="profile">
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+                        class="pro-img" />
+                    <p>Kishan Sharma <span>Admin</span></p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="clearfix"></div>
+        <br />
+
+        <div id="Dashboard--page">
+            <div class="col-div-3">
+                <div class="box">
+                    <p id="Dashboard-Customers"> 67<br /><span>Customers</span> </p>
+                    <i class="fa fa-users box-icon"></i>
+                </div>
+            </div>
+            <div class="col-div-3">
+                <div class="box">
+                    <p id="Dashboard-Products"> 88<br /><span>Products</span> </p>
+                    <i class="fa fa-list box-icon"></i>
+                </div>
+            </div>
+            <div class="col-div-3">
+                <div class="box">
+                    <p id="Dashboard-Orders">99<br /><span>Orders</span></p>
+                    <i class="fa fa-shopping-bag box-icon"></i>
+                </div>
+            </div>
+            <div class="col-div-3">
+                <div class="box">
+                    <p id="Dashboard-Revenue">78000<br /><span>Revenue</span></p>
+                    <i class="fa fa-tasks box-icon"></i>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <br /><br />
+
+            <div class="col-div-8">
+                <div class="box-8">
+                    <div class="content-box">
+                        <p>Top Selling Products </p>
+                        <br />
+                        <table>
+                            <tr>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td>black simple T-shirt</td>
+                                <td>T-shirt</td>
+                                <td>1500/-</td>
+                            </tr>
+                            <tr>
+                                <td>black printed shirt</td>
+                                <td>shirt</td>
+                                <td>2500/-</td>
+                            </tr>
+                            <tr>
+                                <td>black flower T-shirt</td>
+                                <td>T-shirt</td>
+                                <td>3500/-</td>
+                            </tr>
+                            <tr>
+                                <td>black Jeans</td>
+                                <td>Jeans</td>
+                                <td>4500/-</td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-div-4">
+                <div class="box-4">
+                    <div class="content-box">
+                        <p>Total Sale</p>
+
+                        <div class="circle-wrap">
+                            <div class="circle">
+                                <div class="mask full">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="mask half">
+                                    <div class="fill"></div>
+                                </div>
+                                <div class="inside-circle"> 70% </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Customer--page">
+            <table id="customerTable" border="1">
+                <thead>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>MOBILE NUMBER</th>
+                    <th>TOTAL ORDER</th>
+                    <th>ADDRESS</th>
+                </thead>
+                <tbody>
+                    <!-- all customer append here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="Product--page">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            data-bs-whatever="@getbootstrap" id="addProductBtn">ADD PRODUCT</button>
+            <table id="productTable" border="1">
+                <thead>
+                    <th>Id</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Rating</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <!-- all product append here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="Order--page">
+            <table id="orderTable" border="1">
+                <thead>
+                    <th>Product ID</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Customer ID</th>
+                    <th>Customer</th>
+                    <th>Address</th>
+                    <th>Toal Price</th>
+                </thead>
+                <tbody id="tbbody">
+                    <!-- all customer append here -->
+                    
+                </tbody>
+            </table>
+        </div>
+
+        
+        
+        <!-- modal open when we ADD PRODUCT -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="../img/logo-icon.png" alt="BazzarBuddy" class="modal-title" style="width: 100px;">
+                        <h5 class="modal-title" style="margin-left: 35px;">Enter Product Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addProduct-form">
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Title of Product:</label>
+                                <input type="text" class="form-control" id="new_title" required>
+                            </div>
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Category:</label>
+                                <input type="text" class="form-control" id="new_category" required>
+                            </div>
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Price:</label>
+                                <input type="number" class="form-control" id="new_price" required>
+                            </div>
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Image URL:</label>
+                                <input type="text" class="form-control" id="new_url" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="message-text" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="new_description" required></textarea>
+                            </div>
+                            <div class="mb-0">
+                            <input type="submit" class="form-control btn btn-secondary mb-3" id="recipient-name"
+                                value="ADD PRODUCT" style="margin-top: 10px; padding: 10px; font-size: 1.2rem; font-weight: bold;">
+                            </div>
+    
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal open when we edit product details -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="../img/logo-icon.png" alt="BazzarBuddy" class="modal-title" style="width: 100px;">
+                        <h5 class="modal-title" style="margin-left: 35px;">Edit Product Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProduct-form">
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Title of Product:</label>
+                                <input type="text" class="form-control" id="n_title" required>
+                            </div>
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Category:</label>
+                                <input type="text" class="form-control" id="n_category" required>
+                            </div>
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Price:</label>
+                                <input type="number" class="form-control" id="n_price" required>
+                            </div>
+                            <div class="mb-0">
+                                <label for="recipient-name" class="col-form-label">Image URL:</label>
+                                <input type="text" class="form-control" id="n_url" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="message-text" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="n_description" required></textarea>
+                            </div>
+                            <div class="mb-0">
+                            <input type="submit" class="form-control btn btn-secondary mb-3" id="recipient-name"
+                                value="UPDATE PRODUCT" style="margin-top: 10px; padding: 10px; font-size: 1.2rem; font-weight: bold;">
+                            </div>
+    
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="clearfix"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+
+
+</html>
