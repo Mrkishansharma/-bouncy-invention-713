@@ -111,3 +111,24 @@ input[type=radio] {
     width: 10%;
     height: 2em;
 }
+
+
+
+@media screen and (max-width:900px) and (min-width:850px){
+    .productsSection{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (max-width:850px) and (min-width:500px){
+    .productsSection{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:500px){
+    .productsSection{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
