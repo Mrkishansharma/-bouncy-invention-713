@@ -1,3 +1,6 @@
+.productDetail--Box{
+    margin: auto;
+}
 .productData{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -8,10 +11,12 @@
     padding: 0px 40px;
 }
 
-.productData > div:nth-child(1) > img{
+.product--bigImage{
     width: 80%;
     display: block;
     margin: auto;
+    padding-top: 20px;
+    border-radius: 5px;
 }
 
 .addAndCartBtn{
@@ -21,7 +26,12 @@
     width: 75%;
     margin: 30px auto;
 }
+.price-detail-page{
+    font-size: 26px;
+    font-weight: bold;
+    color: #333333;
 
+}
 .productDetailSection {
     display: flex;
     flex-direction: column;
@@ -32,6 +42,7 @@
 .productDetailSection > div{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .productDetailSection h2{
@@ -52,9 +63,10 @@
 
 .rating-block--d > span:nth-child(1){
     font-size: 14px;
-    padding: 3px 4px;
-    background-color: rgb(35, 187, 117);
-    border-radius: 10px;
+    padding: 3px 8px;
+    font-weight: bold;
+    background-color: rgb(25, 231, 135);
+    border-radius: 20px;
     color: white;
 }
 .delivery--d{
@@ -64,14 +76,15 @@
     background-color: #eee6e6;
     color: rgb(53, 51, 51);
     padding: 3px 5px;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 13px;
 }
-
 .size--d > span{
+    font-size: 14px;
     background-color: #eee6e6;
     color: rgb(53, 51, 51);
     padding: 3px 5px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .addAndCartBtn{
     border-bottom: 1px solid #ccc;
@@ -83,10 +96,41 @@
     border-radius: 5px;
     cursor: pointer;
 }
+#addToCartBtn:hover{
+    background-color: #9d91f8;
+}
 #buyNowBtn{
     border: none;
     background-color: #f43397;
     padding: 12px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* * {box-sizing: border-box;} */
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
 }

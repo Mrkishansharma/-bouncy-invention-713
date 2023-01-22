@@ -153,6 +153,7 @@
     align-items: center;
     /* height: 100vh; */
     width: 100%;
+    margin: auto;
     box-sizing: border-box;
     /* padding: 0px 10px; */
     /* background-color: rgb(254, 187, 187); */
@@ -161,18 +162,29 @@
     display: none;
     /* margin: auto; */
     /* border: 1px solid red; */
+    text-align: center;
 }
 .p--emptyCartPage > img{
     height: 100%;
     width: 33%;
-    display: inline;
+    display: block;
+    margin: auto;
+
 }
 .p--emptyCartPage > button{
     text-align: center;
     display: block;
     margin: auto;
     border: none;
-    color: white;
-    background-color: green;
-    font-size: 2rem;
+    color: #666666;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+
+.p--emptyCartPage > button:hover{
+    background-color: rgb(221, 218, 218);
 }

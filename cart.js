@@ -17,15 +17,27 @@ function goTOProductPage(){
 let currLoginUserId = JSON.parse(localStorage.getItem("currLoginUserId"));
 
 let userInCartPage = {};
+yyy()
+async function yyy(){
+    try {
+        let res = await fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`)
+        let data = await res.json()
+        userInCartPage = data
+        displayAllCartData(userInCartPage)
+        
+    } catch (error) {
+        console.log(error);
+    }
 
-fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`)
-.then(res => res.json())
-.then(data => {
-    userInCartPage = data
-    displayAllCartData(userInCartPage)
-}).catch(er => {
-    console.log(er);
-})
+}
+// fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`)
+// .then(res => res.json())
+// .then(data => {
+//     userInCartPage = data
+//     displayAllCartData(userInCartPage)
+// }).catch(er => {
+//     console.log(er);
+// })
 
 function displayAllCartData(data){
     if(data.cart.length==0){

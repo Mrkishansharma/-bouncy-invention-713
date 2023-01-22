@@ -2,9 +2,8 @@ let addToCartBtn = document.getElementById("addToCartBtn");
 let buyNowBtn = document.getElementById('buyNowBtn');
 
 
-let currProduct = JSON.parse(localStorage.getItem("currProduct"));
+let currProduct = JSON.parse(localStorage.getItem("currProduct")) || {};
 let currLoginUserId = localStorage.getItem("currLoginUserId");
-console.log(currProduct);
 
 
 // show product in browser
@@ -76,4 +75,66 @@ function addCartIntoUserAPI(data){
 
     }
     console.log(data);
+}
+
+
+
+// BUY NOW BUTTON 
+
+let buyNowBtnClick = document.getElementById("buyNowBtn")
+let addressFormEL = document.getElementById("address-form")
+
+buyNowBtnClick.addEventListener("click", () => {
+    if(currLoginUserId){
+        autoFillAddress()
+    }else{
+        location.href="./login.html";
+    }
+})
+
+let LoginUserInCartPage = {}
+async function autoFillAddress(){
+    try {
+        let res = await fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`)
+        let data = await res.json()
+        LoginUserInCartPage = data
+        if(LoginUserInCartPage.address.name){
+            addressFormEL.addressName.value = LoginUserInCartPage.address.name
+            addressFormEL.addressPhone.value = LoginUserInCartPage.address.phone
+            addressFormEL.addressDetail.value = LoginUserInCartPage.address.address
+            addressFormEL.addressPinCode.value = LoginUserInCartPage.address.pinCode
+        }
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+addressFormEL.addEventListener("submit", (event)=> {
+    event.preventDefault();
+    alert("Order Succeesfull")
+
+    // add address
+    LoginUserInCartPage.address.name = addressFormEL.addressName.value 
+    LoginUserInCartPage.address.phone =  addressFormEL.addressPhone.value
+    LoginUserInCartPage.address.address = addressFormEL.addressDetail.value
+    LoginUserInCartPage.address.pinCode = addressFormEL.addressPinCode.value
+
+    // add product in order Array and delete from cart Array
+    LoginUserInCartPage.order.push(...LoginUserInCartPage.cart)
+
+    putDataInUserAPI(LoginUserInCartPage)
+    document.getElementById("exampleModal").style.display = "none"
+
+})
+
+function putDataInUserAPI(data){
+    fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`,{
+                method:"PUT",
+                body:JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
 }
