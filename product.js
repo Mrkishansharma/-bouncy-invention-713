@@ -75,7 +75,11 @@ function displayProducts(data){
         let h6 = document.createElement("h6")
         h6.innerText = element.title
         let h5 = document.createElement("h5")
-        h5.innerText = element.price
+        // h5.innerText = element.price
+        h5.innerHTML = `<i class="fa-solid fa-indian-rupee-sign"></i> ${element.price}`
+        let i = document.createElement("i")
+        i.setAttribute("class", "fa-solid fa-indian-rupee-sign")
+        
         let p = document.createElement("p")
         p.setAttribute("class", "freeDeleveryTag")
         p.innerText = "Free Deleviry"
@@ -85,7 +89,7 @@ function displayProducts(data){
         let p2 = document.createElement("p")
         p2.innerText = element.rating%5 + "⭐"
         let p3 = document.createElement("p")
-        p3.innerText = element.reviews*153 + "Reviews"
+        p3.innerText = element.reviews*153 + " Reviews"
         d3.append(p2,p3)
 
         d2.append(h6,h5,p,d3)

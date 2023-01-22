@@ -30,14 +30,7 @@ async function yyy(){
     }
 
 }
-// fetch(`https://63c8fd2e320a0c4c953e48fb.mockapi.io/users/${currLoginUserId}`)
-// .then(res => res.json())
-// .then(data => {
-//     userInCartPage = data
-//     displayAllCartData(userInCartPage)
-// }).catch(er => {
-//     console.log(er);
-// })
+
 
 function displayAllCartData(data){
     if(data.cart.length==0){
@@ -149,8 +142,7 @@ continueBtn.addEventListener("click", ()=> {
 
 addressFormEL.addEventListener("submit", (event)=> {
     event.preventDefault();
-    alert("Order Succeesfull")
-
+    
     // add address
     userInCartPage.address.name = addressFormEL.addressName.value 
     userInCartPage.address.phone =  addressFormEL.addressPhone.value
@@ -163,6 +155,9 @@ addressFormEL.addEventListener("submit", (event)=> {
 
     putDataInUserAPI(userInCartPage)
     displayAllCartData(userInCartPage)
-    document.getElementById("exampleModal").style.display = "none"
+    // document.getElementById("exampleModal").style.display = "none"
+    alert("Order Succeesfull")
+
+    location.reload()
 
 })

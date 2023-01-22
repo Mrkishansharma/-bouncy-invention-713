@@ -125,7 +125,8 @@ addressFormEL.addEventListener("submit", (event)=> {
     LoginUserInCartPage.order.push(...LoginUserInCartPage.cart)
 
     putDataInUserAPI(LoginUserInCartPage)
-    document.getElementById("exampleModal").style.display = "none"
+    // document.getElementById("exampleModal").style.display = "none"
+    location.reload()
 
 })
 

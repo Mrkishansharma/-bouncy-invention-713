@@ -264,7 +264,7 @@ addProductForm.addEventListener("submit", (event)=> {
         avatar: addProductForm.new_url.value,
         price: addProductForm.new_price.value,
         category: addProductForm.new_category.value,
-        description : addProductForm.new_category.value
+        description : addProductForm.new_description.value
     }
 
     postProductIntoAPI(obj)
