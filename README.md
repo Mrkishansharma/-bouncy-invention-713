@@ -1,5 +1,5 @@
 # -bouncy-invention-713
-Bazaar Buddy
+## Bazaar Buddy
 
 ## Table of Content
 
